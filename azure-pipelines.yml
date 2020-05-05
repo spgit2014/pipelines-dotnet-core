@@ -21,3 +21,10 @@ steps:
     testResultsFiles: '**/*.trx'
 
 - task: PublishBuildArtifacts@1
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: '80e429e3-df83-44a1-94ae-7874486dc7ef'
+    appType: webAppLinux
+    appName: 'STEOWebApp'
+    package: $(System.DefaultWorkingDirectory)/**/*.zip
